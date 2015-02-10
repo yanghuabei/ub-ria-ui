@@ -59,6 +59,11 @@ require.config({
             'name': 'er',
             'location': '../dep/er/3.1.0-beta.6/src',
             'main': 'main'
+        },
+        {
+            'name': 'ub-ria',
+            'location': '../dep/ub-ria/2.0.0-beta.5/src',
+            'main': 'main'
         }
     ]
 });
@@ -84,13 +89,15 @@ $(function () {
     $('.source, .viewer li').on('mousedown', false);
     //$('html').on('mousedown', hideSource);
 
-    var navItems =
-        '<li><a href="Carousel.html">Carousel</a></li>' +
-        '<li><a href="ToggleSelector.html">ToggleSelector</a></li>' +
-        '<li><a href="TreeRichSelector.html">TreeRichSelector</a></li>' +
-        '<li><a href="DrawerActionPanel.html">DrawerActionPanel</a></li>';
+    var navItems = [
+        '<li><a href="Carousel.html">Carousel</a></li>',
+        '<li><a href="ToggleSelector.html">ToggleSelector</a></li>',
+        '<li><a href="TreeRichSelector.html">TreeRichSelector</a></li>',
+        '<li><a href="DrawerActionPanel.html">DrawerActionPanel</a></li>',
+        '<li><a href="ColorPicker.html">ColorPicker</a></li>'
+    ];
 
-    $('#navigator').html(navItems);
+    $('#navigator').html(navItems.join(''));
 
     $('.example').each(function (index, item) {
         var $sample = $('<pre class="source source-markup"><code class="language-markup"></code></pre>');
@@ -108,7 +115,7 @@ $(function () {
         }
         $code.text(targetArr.join('\n'));
     });
-    Prism.highlightAll();
+    // Prism.highlightAll();
 });
 var ready = (function () {
     var list = [];
